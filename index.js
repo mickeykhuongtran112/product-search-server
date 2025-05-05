@@ -11,7 +11,7 @@ app.use(express.json());
 
 // --- Config Circa API ---
 const CIRCA_API_URL = "https://api.v2.circa.vn/v1/pos/5976e784-3be9-4504-8b8f-cb28424cbeb2/qr/";
-const AUTHORIZATION_TOKEN = "Bearer eyJ0eXBlIjoiYWNjZXNzX3Rva2VuIiwiaXNzIjoiQnV5bWVkLUFQIiwidG9rZW4iOiJVMlpXWWlkZVVLYXp3M3RLOVNHSkN0bDladjhyMVRJcTYzdnFURDlGdWRxNHRDRWMiLCJjbGllbnQiOiIzVlZHV0ZaSTNlMjdlVGFTdjJXOGU5dFRBSEN1QXQ5cDZkN2hFMUpQUXI0clA4cDEifQo=";
+const AUTHORIZATION_TOKEN = "Bearer eyJ0eXBlIjoiYWNjZXNzX3Rva2VuIiwiaXNzIjoiQnV5bWVkLUFQIiwidG9rZW4iOiI2bDU1WEhBNmc0QzF2cks2dDJNSjY2RkI4QTgycGx2bm1VR1BKTmthYzR5M1ZlRGwiLCJjbGllbnQiOiIzVlZHV0ZaSTNlMjdlVGFTdjJXOGU5dFRBSEN1QXQ5cDZkN2hFMUpQUXI0clA4cDEifQo=";
 
 // --- API route ---
 app.get('/api/fetch-product', async (req, res) => {
@@ -29,7 +29,12 @@ app.get('/api/fetch-product', async (req, res) => {
         authorization: AUTHORIZATION_TOKEN,
         origin: "https://pos.v2.circa.vn",
         referer: "https://pos.v2.circa.vn/",
-        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+        "grpc-timeout": "30S",
+        "sec-ch-ua": `"Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"`,
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": '"macOS"',
+        DNT: "1",
       },
     });
 
